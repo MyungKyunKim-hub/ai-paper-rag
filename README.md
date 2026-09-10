@@ -1,5 +1,9 @@
 # AI Paper RAG
 
+## Demo
+
+배포된 서비스: [AI Paper RAG Demo](https://ai-paper-rag-jo67xxiki97pd478npaegh.streamlit.app/)
+
 논문 PDF를 업로드하고 논문 내용에 대해 질문할 수 있는 RAG 기반 QA 서비스입니다.
 
 단순히 RAG를 구현하는 것에서 끝내지 않고, chunk size / overlap / retriever k 값을 변경하면서 검색 정확도와 답변 정확도를 비교했습니다.
