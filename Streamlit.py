@@ -11,9 +11,9 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain.chains import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
 
-# -------------------------
+
 # 페이지 설정
-# -------------------------
+
 
 st.set_page_config(
     page_title="AI Paper RAG",
@@ -26,9 +26,9 @@ st.title("📄 AI Paper RAG")
 st.write("논문 PDF를 업로드하고 질문해보세요.")
 
 
-# -------------------------
+
 # Session State 초기화
-# -------------------------
+
 
 if "vectorstore" not in st.session_state:
     st.session_state.vectorstore = None
@@ -37,9 +37,9 @@ if "file_hash" not in st.session_state:
     st.session_state.file_hash = None
 
 
-# -------------------------
+
 # PDF 업로드
-# -------------------------
+
 
 uploaded_file = st.file_uploader(
     "논문 PDF를 업로드하세요.",
@@ -56,9 +56,9 @@ if uploaded_file is not None:
     current_file_hash = hashlib.md5(file_bytes).hexdigest()
 
 
-    # -------------------------
+
     # 새로운 PDF일 때만 Vector DB 생성
-    # -------------------------
+
 
     if st.session_state.file_hash != current_file_hash:
 
@@ -109,9 +109,9 @@ if uploaded_file is not None:
         st.success("Vector DB 생성 완료!")
 
 
-    # -------------------------
+
     # 기존 Vector DB 재사용
-    # -------------------------
+
 
     if st.session_state.vectorstore is not None:
 
@@ -163,9 +163,7 @@ if uploaded_file is not None:
         )
 
 
-        # -------------------------
         # 질문 입력
-        # -------------------------
 
         question = st.text_input(
             "논문에 대해 질문하세요."
